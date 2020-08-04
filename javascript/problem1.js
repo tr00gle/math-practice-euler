@@ -13,3 +13,7 @@ function problem1(upperBound = 1000) {
 }
 
 console.log(`the sum of all the multiples of 3 or 5 below 1000 is ${problem1()}.`)
+
+const params = {};
+if (skus.length) params.skus = skus.join(',');
+axios.get(url, params);
