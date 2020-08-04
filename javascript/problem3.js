@@ -3,12 +3,14 @@
  * What is the largest prime factor of the number 600851475143 ?
  */
 
+
 function largestPrimeFactor(num) {
   let largestPrimeFactor = 0; // I know zero is not prime. Neither is one, and two isn't gauranteed to be a factor.
   let currentDivisor = 2;
   let dividend = num;
+  const maxPrimeFactor = Math.floor(Math.sqrt(num));
 
-  while (dividend > 1 && currentDivisor <= num / 2) {
+  while (dividend > 1 && currentDivisor <= maxPrimeFactor) {
     if (isPrime(currentDivisor) && dividend % currentDivisor === 0) {
       largestPrimeFactor = currentDivisor;
       dividend /= currentDivisor;
@@ -22,9 +24,10 @@ function largestPrimeFactor(num) {
 function primeFactors(num) {
   let currentDivisor = 2;
   let dividend = num;
+  const maxPrimeFactor = Math.floor(Math.sqrt(num));
   const primeFactors = [];
 
-  while (dividend > 1 && currentDivisor <= num / 2) {
+  while (dividend > 1 && currentDivisor <= maxPrimeFactor) {
     if (isPrime(currentDivisor) && dividend % currentDivisor === 0) {
       primeFactors.push(currentDivisor);
       dividend /= currentDivisor;
